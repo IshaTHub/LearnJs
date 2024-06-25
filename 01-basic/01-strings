@@ -1,0 +1,10 @@
+const newString = new String('IshaTiwari')
+
+const gName = newString.substring(0,5)
+console.log(gName)
+const ggName = newString.slice(-10,2)
+console.log(ggName)
+
+
+const abc = new String('   seema   ')
+console.log(abc.trim())
