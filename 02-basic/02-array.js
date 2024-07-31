@@ -9,7 +9,7 @@ const isha = ['ij', 'kl', 'mn']
 
 //Spread operator
 
-const IshaTiwari = [...is, ...isha]
+const IshaTiwari = [...is, ...isha]  //new
 console.log(IshaTiwari);
 
 const pqr = [1,2,3,[4,5],[44,[7,8,9]]]
