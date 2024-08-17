@@ -10,7 +10,24 @@
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
         <h2>Lorem, ipsum.</h2>
         <h2>Lorem ipsum dolor sit.</h2>
-        <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem, ipsum. Lrem Ipesun abcd efgh ijkl man j dks jfa djfasjfj </h2>
+        <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem, ipsum. Lrem Ipesun abcd efgh ijkl man j dks jfa cddjfasjfj </h2>
+        <ul>
+            <li>
+                <img width="200px" id="cup" src="https://images.pexels.com/photos/1566308/pexels-photo-1566308.jpeg?cs=srgb&dl=pexels-jbigallery-1566308.jpg&fm=jpg" alt="cup">
+            </li>
+            <li>
+                <img width="200px" id = "manyCups" src="https://www.arakucoffee.in/cdn/shop/files/Catalogue--9.jpg?v=1722847068&width=2672" alt="3cups">
+            </li>
+        </ul>
     </div>
 </body>
+<script>
+    document.getElementById('cup').onclick = function () {
+        alert("the picture is clicked")
+    }
+
+    document.getElementById('manyCups').addEventListener('click', function (){
+        alert("many cups image is clicked")
+    }, false)
+</script>
 </html>
