@@ -1,0 +1,111 @@
+<< Call Stack >>
+The Call Stack is a stack data structure that tracks execution contexts.
+
+How the Call Stack Works
+When JavaScript starts execution
+
+The Global Execution Context (GEC) is pushed onto the stack.
+When a function is called
+
+A new Function Execution Context (FEC) is created and pushed onto the stack.
+When a function returns
+
+The FEC is popped off the stack.
+When an error occurs (e.g., infinite recursion)
+
+The stack overflows, leading to a stack overflow error.
+EXAMPLE:
+function first() {
+    console.log("First Function");
+    second();
+}
+
+function second() {
+    console.log("Second Function");
+    third();
+}
+
+function third() {
+    console.log("Third Function");
+}
+
+first();
+
+Call Stack Flow
+first() is called → first() execution context is pushed onto the stack.
+Inside first(), console.log("First Function") is executed.
+second() is called → second() execution context is pushed onto the stack.
+Inside second(), console.log("Second Function") is executed.
+third() is called → third() execution context is pushed onto the stack.
+Inside third(), console.log("Third Function") is executed.
+third() finishes → execution context is popped.
+second() finishes → execution context is popped.
+first() finishes → execution context is popped.
+
+Call Stack:
+|            | 
+| (empty)    |  <-- first() finishes
+|------------|
+| first()    |  <-- first() is executing
+|------------|
+| second()   |  <-- second() is executing
+|------------|
+| third()    |  <-- third() is executing
+|------------|
+| GEC        |  <-- Global Execution Context
+
+Once all functions return, the stack is empty.
+
+
+Q1: Call Stack Order
+function a() {
+    console.log("A");
+    b();
+    console.log("A done");
+}
+
+function b() {
+    console.log("B");
+    c();
+    console.log("B done");
+}
+
+function c() {
+    console.log("C");
+}
+
+a();
+Output:
+A
+B
+C
+B done
+A done
+
+Q2: Stack Overflow
+function infinite() {
+    console.log("Hello");
+    infinite();
+}
+
+infinite();
+
+
+Q3: Call Stack with setTimeout
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Inside Timeout");
+}, 0);
+
+console.log("End");
+Output:
+Start
+End
+EXPLANATION:
+Inside Timeout
+Explanation:
+The main script runs first (console.log("Start")).
+setTimeout is sent to the Web APIs (not call stack), and execution continues.
+console.log("End") executes.
+The callback from setTimeout is placed in the callback queue and executed after the main thread finishes.
