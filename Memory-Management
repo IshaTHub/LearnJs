@@ -1,0 +1,108 @@
+<< Memory Management >>
+
+Memory management in JavaScript involves allocating and freeing memory automatically.
+
+Memory Allocation in JavaScript
+Memory Heap (Dynamic Memory)
+
+Stores objects and functions.
+Grows and shrinks dynamically.
+Example:
+
+let obj = { name: "John" }; // Allocated in heap memory
+Call Stack (Function Execution)
+
+Stores execution contexts for function calls.
+Uses Last In, First Out (LIFO) mechanism.
+Garbage Collection (GC)
+JavaScript automatically reclaims memory that is no longer needed. This process is handled by the Garbage Collector (GC) using different algorithms.
+
+Garbage Collection Algorithms
+Reference Counting
+
+Tracks the number of references to an object.
+If an object has zero references, it is removed.
+Problem: Circular references can cause memory leaks.
+
+let a = {};
+let b = { ref: a };
+a.ref = b; // Circular reference
+Mark and Sweep
+
+Used in modern browsers.
+Identifies "reachable" objects from the root (window in browsers).
+Unreachable objects are removed.
+Memory Leaks and Prevention
+Memory leaks happen when memory is not properly released. Common causes:
+
+Global Variables
+
+function leak() {
+    leakedVar = "This is a memory leak"; // No `var`, `let`, or `const`
+}
+leak(); // Stays in memory because it becomes a global variable
+Event Listeners Not Removed
+
+
+let button = document.getElementById("myButton");
+button.addEventListener("click", () => console.log("Clicked!"));
+// If not removed, this keeps references alive
+button.removeEventListener("click", myFunction);
+Closures Holding References
+
+
+function outer() {
+    let bigData = new Array(1000000).fill("Leak"); // Large memory allocation
+    return function inner() {
+        console.log(bigData[0]); // Keeps reference to `bigData`
+    };
+}
+let leaky = outer(); // Memory is not freed
+How to Prevent Memory Leaks
+Use let or const instead of global variables.
+Remove event listeners when they are no longer needed.
+Set unneeded variables to null.
+Use WeakMap and WeakSet for objects that should be garbage-collected when no longer in use.
+
+
+Q1: Memory Reference and Garbage Collection
+let obj1 = { name: "Alice" };
+let obj2 = obj1;
+obj1 = null;
+console.log(obj2.name);
+Output:
+Alice
+Explanation:
+obj2 still holds a reference to { name: "Alice" }, so it is not garbage collected.
+Only obj1 is set to null, but the object itself is still reachable through obj2.
+Q2: Closures and Memory Leaks
+function outer() {
+    let bigData = new Array(1000000).fill("Leak");
+    
+    return function inner() {
+        console.log(bigData[0]);
+    };
+}
+
+let leaky = outer();
+leaky();
+Output:
+Leak
+Explanation:
+bigData is not garbage collected because inner() holds a reference to it.
+This is a closure-based memory leak because bigData remains in memory as long as leaky exists.
+Q3: WeakMap and Garbage Collection
+
+let obj = { data: "Important" };
+let map = new WeakMap();
+
+map.set(obj, "Metadata");
+obj = null; // Dereferencing the object
+
+console.log(map);
+Output:
+
+WeakMap { <items unknown> }
+Explanation:
+WeakMap does not prevent garbage collection. The obj is eligible for garbage collection after being set to null.
+Unlike a regular Map, a WeakMap holds a weak reference, meaning once obj is dereferenced, it can be garbage collected.
