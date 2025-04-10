@@ -17,9 +17,14 @@ const promise = createOrder(cart);    // this line will return us a promise i.e 
 // later this object will be filled with data automatically after async time it will take {data: orderDetails}
 
 //we will be "ATTACHING" this callback func to our promise object. Which will be called
-promise.then(function(){
+promise.then(function(){      //success part, if we resolve the promise
 proceedToPayment(orderId);
-});
+})
+  //error handling
+//failure callback
+.catch(function(err){      //if the promise fails, this callback will be called
+  console.log(err.message);
+})           
 
 //promise gives us the gurantee that it will call this callback funtion whenever there is data inside the promise object
 // it will call this just ONCE
