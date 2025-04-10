@@ -40,4 +40,24 @@ user.then(fucntion(data){
   console.log(data);
 })
 
+//Producer part
+// How do we create the promise
+//create order will return a promise
+function createOrder(cart){
+  const pr = new Promise(function(resolve, reject));    //promise constructor, it takes a function which has resolve and reject functions given by javascript to build promise
+      //logic of handling what we need to do inside our createOrder func or 
+      //validate cart
+  const err = new Error("Cart is not valid");
+  if(!validateCart){
+    reject(err);
+  }
+  const orderId = '11122'
+
+  if(orderId){
+    resolve(orderId);
+  }
+  
+    return pr;
+}
+
 
