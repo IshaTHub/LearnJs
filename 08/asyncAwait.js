@@ -12,8 +12,11 @@ async function getData(){
 //if it returns a value then it will be automatically wrapped inside a promise and return a promise
 
 async function handlePromise(){
- const val =  await p;
+ const val =  await p;       //await is a keyword that can only be used inside an async function and it resolves the promise
+  console.log(val);
 }
+
+handlePromise();
 
 
 const dataPromise = getData();
