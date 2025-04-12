@@ -57,3 +57,26 @@ dataPromise.then(res => console.log("res"));
 // After 10 sec, Hello 11 and Promise resolved value!! will be printed
 // p2 will be already resolved as it only took 5 sec to execute
 // prints Hello 22 and Promise resolved value!!
+
+
+//real world example
+
+const API_URL = "https://api.github.com/users/ishathub"
+
+async function RealWorld(){
+  try{
+    const data = await fetch(API_URL);   //data will get response obj
+  const jsonValue = await data.json();  //converting the response body to json i.e. again a promise
+    console.log(jsonValue);
+  }
+  catch{
+    console.log(err);
+  }
+  
+ // fetch().then(res => res.json()).then(res => console.log(jsonValue))
+}
+
+RealWorld();
+
+
+
