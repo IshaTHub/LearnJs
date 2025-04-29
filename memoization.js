@@ -6,6 +6,12 @@ const argsToString = JSON.stringify(args)
             console.log(`Fetching from cache ${argsToString}`)
             return cache[argsToString]
         }
+        else {
+			const result = fn.apply(this, args);
+			cache[argsToString] = result;
+			console.log(`Calculating result ${argsToString}`);
+			return result;
+		}
     }
 }
 
