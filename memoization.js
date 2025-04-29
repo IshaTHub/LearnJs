@@ -15,7 +15,8 @@ const argsToString = JSON.stringify(args)
     }
 }
 
-addThreeNum = (a,b,c) => a+b+c 
+const addThreeNum = (a, b, c) => a + b + c;
 
-add = memoize(addThreeNum)
-add(1,2,3);
+add = memoize(addThreeNum);
+console.log(add(1, 2, 3));
+console.log(add(1, 2, 3));
