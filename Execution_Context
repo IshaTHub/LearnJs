@@ -1,0 +1,92 @@
+<<Execution Context>>
+The Execution Context (EC) is an environment in which JavaScript code is evaluated and executed. It consists of:
+
+Types of Execution Context
+Global Execution Context (GEC)
+
+Created when JavaScript starts executing (e.g., when a script is loaded).
+The this keyword in the GEC refers to the global object (window in browsers, global in Node.js).
+There is only one global execution context at any time.
+Function Execution Context (FEC)
+
+Created every time a function is invoked.
+Each function has its own execution context, which contains:
+Variable Environment (variables, functions, and arguments inside the function).
+Lexical Environment (reference to its outer scope).
+this Binding (depends on how the function is called).
+Eval Execution Context
+
+Created when code is executed inside eval(), but rarely used due to security concerns.
+
+Execution Context Lifecycle
+Each execution context goes through three phases:
+
+1. Creation Phase
+The JS engine first parses the code and prepares to execute it.
+Memory Allocation happens:
+Creates the Global Object (window or global).
+Creates the this binding.
+Sets up a Memory Heap to store variables and function references.
+Hoists function and variable declarations.
+2. Execution Phase
+Code is executed line by line.
+Variables are assigned values.
+Functions are invoked, which creates new execution contexts.
+3. Garbage Collection
+Once the execution is completed, the execution context is removed from memory.
+
+
+Q1: Hoisting in Execution Context
+console.log(a);
+var a = 10;
+console.log(b);
+let b = 20;
+O/P: 
+undefined
+ReferenceError: Cannot access 'b' before initialization
+Explanation:
+var a is hoisted and initialized with undefined, so console.log(a) prints undefined.
+let b is also hoisted, but it's in the Temporal Dead Zone (TDZ) until it is assigned a value.
+Trying to access b before declaration results in a ReferenceError.
+
+Q2: Function Hoisting
+hello();
+
+function hello() {
+    console.log("Hello, World!");
+}
+
+bye();
+
+var bye = function() {
+    console.log("Goodbye!");
+};
+O/P: 
+Hello, World!
+TypeError: bye is not a function
+Explanation:
+hello() works because function declarations are hoisted with their definitions.
+bye() causes an error because bye is declared using var, which is hoisted but initialized as undefined, making bye() an invalid function call.
+
+
+Q3: this in Execution Context
+var name = "Alice";
+
+function sayName() {
+    console.log(this.name);
+}
+
+const obj = {
+    name: "Bob",
+    sayName: sayName
+};
+
+sayName();
+obj.sayName();
+O/P:
+Alice
+Bob
+Explanation:
+When sayName() is called globally, this refers to the global object (window.name = "Alice" in browsers).
+When obj.sayName() is called, this refers to obj, so it prints "Bob".
+
