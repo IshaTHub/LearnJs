@@ -12,9 +12,16 @@
 
 <script>
     const setTimeFun = function (){
-        console.log("Message");
+        document.querySelector('h1').innerText = "Isha aur code";
+        
     }
-    setTimeout(setTimeFun, 3000);
+    const changeMe = setTimeout(setTimeFun, 3000);
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe);
+        console.log("stopped");
+        
+    })
 
 
 </script>
