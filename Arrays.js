@@ -1,15 +1,8 @@
-let nums = [1,2,3,4,5]; 
-
-function double(n){
-    return n*2;
+function camelize(str){
+   return str.split('-').map((word,index) => index === 0? word : word[0].toUpperCase() + word.slice(1)).join('');
 }
 
-let Arr1 = nums.map(double);
-//console.log(Arr1)
+console.log(camelize("background-color"));
 
-let newArr = nums.filter((val) => val%2 === 0)
-//console.log(newArr)
+//console.log(splitArray);
 
-let names = 'Bilbo, Gandalf, Nazgul';
-let arr = names.split(', ');
-console.log(arr);
