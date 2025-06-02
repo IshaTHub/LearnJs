@@ -1,8 +1,8 @@
-function camelize(str){
-   return str.split('-').map((word,index) => index === 0? word : word[0].toUpperCase() + word.slice(1)).join('');
-}
+function filterRange(arr, a, b) {
+    // added brackets around the expression for better readability
+    return arr.filter(item => (a <= item && item <= b));
+  }
+  let arr = [5, 3, 8, 4, 1];
+  let filtered = filterRange(arr, 1, 4);
 
-console.log(camelize("background-color"));
-
-//console.log(splitArray);
-
+  console.log(filtered)
