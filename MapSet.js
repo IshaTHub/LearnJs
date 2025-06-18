@@ -11,7 +11,6 @@ alert( map.get('1') ); // 'str1'
 
 alert( map.size ); // 3
 
-
 let john = { name: "John" };
 
 // for every user, let's store their visits count
