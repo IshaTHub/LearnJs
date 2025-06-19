@@ -1,6 +1,6 @@
 << Memory Management >>
 
-Memory management in JavaScript involves allocating and freeing memory automatically.
+//Memory management in JavaScript involves allocating and freeing memory automatically.
 
 Memory Allocation in JavaScript
 Memory Heap (Dynamic Memory)
