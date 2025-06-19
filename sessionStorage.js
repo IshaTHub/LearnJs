@@ -15,11 +15,11 @@
 // …Then refresh the page. Now you can still get the data:
 
  alert( sessionStorage.getItem('test') ); // after refresh: 1
-// …But if you open the same page in another tab, and try again there, the code above returns null, meaning “nothing found”.
+But if you open the same page in another tab, and try again there, the code above returns null, meaning “nothing found”.
 
 // That’s exactly because sessionStorage is bound not only to the origin, but also to the browser tab. For that reason, sessionStorage is used sparingly.
 
-// Storage event
+Storage event
 // When the data gets updated in localStorage or sessionStorage, storage event triggers, with properties:
 
 // key – the key that was changed (null if .clear() is called).
