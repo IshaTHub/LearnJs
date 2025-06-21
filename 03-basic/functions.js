@@ -7,7 +7,7 @@ function addTwoNo(num1, num2){
     console.log(num1+num2)
 }
 
-//const res = addTwoNo(4,5);
+//const res = addTwoNo(4,5)
 
 //console.log("result:", res)  // o/p undefined
 
