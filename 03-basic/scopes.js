@@ -6,7 +6,7 @@ if(true){                     // Block Scope
 
 //console.log("Outer: ", a);   // Global Scope
 
-//++++++++++INTRESTING++++++++++++
+//++++++++++INTRESTING++++++++++++++
 
 function addOne(num) {
     return num+1
