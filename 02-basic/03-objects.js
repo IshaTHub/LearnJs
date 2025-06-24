@@ -10,7 +10,7 @@ const myObj = {
     [mySyl]: "abc"
 }
 
-// console.log(myObj["name"]);
+ console.log(myObj["name"]);
 console.log(myObj["happy"]);
 // console.log(myObj[mySyl])
 
