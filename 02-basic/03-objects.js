@@ -17,8 +17,8 @@ console.log(myObj["happy"]);
 // myObj.Age = 22;
 // console.log(myObj["Age"])
 // Object.freeze(myObj)
-// myObj.name = "IshaTiwari"
-// console.log(myObj);
+ myObj.name = "IshaTiwari"
+ console.log(myObj);
 
 // function 
 // myObj.greeting = function () {
