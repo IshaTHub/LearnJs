@@ -11,7 +11,7 @@ const myObj = {
 }
 
 // console.log(myObj["name"]);
-// console.log(myObj["happy"]);
+console.log(myObj["happy"]);
 // console.log(myObj[mySyl])
 
 // myObj.Age = 22;
