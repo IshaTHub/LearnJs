@@ -1,14 +1,4 @@
-let str = "As sly as a fox, as strong as an ox";
+let str = "Notify"
 
-let target  = 'a';
-
-let pos = 0;
-
-while(true){
-    let foundPos = str.indexOf(target, pos);
-    if(foundPos === -1){
-        break;
-    }
-    console.log(`Found '${target}' at position ${foundPos}`);
-    pos = foundPos + 1;  //next char check 
-}
+let str2 = str.substring(1,4);
+console.log(str2)
