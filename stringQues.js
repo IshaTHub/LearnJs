@@ -9,3 +9,10 @@ console.log(user.name); // John
 
 let user2 = users.findIndex(user => user.name == "Mary");
 console.log(user2); // 2
+
+let user3  = users.filter(user => user.id < 3);
+console.log(user3);
+
+//to get length of each user name 
+let users4 = users.map(user => user.name.length );
+console.log(users4); // [6, 4, 4]
