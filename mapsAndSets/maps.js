@@ -1,17 +1,18 @@
-// new Map()  // Creates a new Map object
-// Map.set(Key, Value)  //stores valued by key
-// Map.get(Key) // retrieves the value by key
-// Map.has(Key) // true/false if key exists
-// Map.delete(Key) // deletes the key and value
-// Map.clear() // removes all keys and values
-// Map.size // returns the current element count
-
-let map = new Map();
-
-map.set('1', "str1");
-map.set(1, "num1");
-map.set(true, "bool1");
+let recipeMap = new Map([
+  ['cucumber', 500],
+  ['tomatoes', 350],
+  ['onion',    50]
+]);
 
 
-console.log(map.get('1'));
+for(let vegetables of recipeMap.keys()){
+    console.log(vegetables);
+}
 
+for(let amount of recipeMap.values()){
+    console.log(amount);
+}
+
+for(let entry of recipeMap.entries()){
+    console.log(entry);
+}
