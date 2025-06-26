@@ -1,18 +1,21 @@
-let recipeMap = new Map([
-  ['cucumber', 500],
-  ['tomatoes', 350],
-  ['onion',    50]
-]);
+// creating map from plain object
 
-
-for(let vegetables of recipeMap.keys()){
-    console.log(vegetables);
+const obj1 = {
+    name: 'John',
+    age: 30,
+    city: 'New York'
 }
 
-for(let amount of recipeMap.values()){
-    console.log(amount);
-}
 
-for(let entry of recipeMap.entries()){
-    console.log(entry);
-}
+const map1 = new Map(Object.entries(obj1));
+
+console.log(map1.get('name'));
+
+
+let map = new Map();
+map.set('banana', 1);
+map.set('orange', 22);
+map.set('meat', 4);
+ 
+let obj = Object.fromEntries(map.entries());
+console.log(obj.orange);
