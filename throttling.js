@@ -103,3 +103,18 @@ export default ResizeComponent;
 A custom throttle function ensures setWindowSize isn’t called too frequently.
 
 Without throttling, resize events could fire dozens of times per second, leading to laggy UI updates.
+
+
+function throttle(func, delay) {
+  let lastCall = 0;
+
+  return function (...args) {
+    const now = new Date().getTime();
+
+    if (now - lastCall >= delay) {
+      lastCall = now;
+      func.apply(this, args);
+    }
+  };
+}
+
