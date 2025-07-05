@@ -29,3 +29,16 @@ Inside the `debounce` function, a `timeout` variable is declared to keep track o
 When the debounced function is called, it clears the previous timeout using `clearTimeout(timeout)`, and then sets a new timeout using `setTimeout()`. The `setTimeout()` function invokes the original `func` after the specified `wait` time has passed.
 
 This ensures that the debounced function is only called after a certain amount of time has elapsed since the last invocation. If the debounced function is called again within the specified `wait` time, the previous timeout is cleared, and a new one is set, effectively resetting the debounce timer.
+
+Example of function call:-
+
+function logger(){
+  console.log("debounce");
+}
+const printlog = debounce (logger,2000);
+printlog();
+printlog();
+/* Output:-
+debounce 
+debounce
+*/
