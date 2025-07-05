@@ -3,3 +3,21 @@ modern features to older browsers that do not natively support them.
 To use it, include the polyfill script in your HTML or 
 install it via a package manager, ensuring 
 compatibility with older environments.
+
+
+Pollyfill for debounce
+
+
+function debounce(func, wait) {
+  let timeout;
+  
+  return function() {
+    const context = this;
+    const args = arguments;
+    
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func.apply(context, args);
+    }, wait);
+  };
+}
