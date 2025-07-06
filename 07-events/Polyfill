@@ -3,3 +3,42 @@ modern features to older browsers that do not natively support them.
 To use it, include the polyfill script in your HTML or 
 install it via a package manager, ensuring 
 compatibility with older environments.
+
+
+Pollyfill for debounce
+
+
+function debounce(func, wait) {
+  let timeout;
+  
+  return function() {
+    const context = this;
+    const args = arguments;
+    
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func.apply(context, args);
+    }, wait);
+  };
+}
+
+This polyfill creates a function called `debounce` that takes in two parameters: `func`, which is the function you want to debounce, and `wait`, which is the amount of time to wait before invoking the debounced function.
+
+Inside the `debounce` function, a `timeout` variable is declared to keep track of the setTimeout reference. The returned function is the actual debounced function that will be invoked.
+
+When the debounced function is called, it clears the previous timeout using `clearTimeout(timeout)`, and then sets a new timeout using `setTimeout()`. The `setTimeout()` function invokes the original `func` after the specified `wait` time has passed.
+
+This ensures that the debounced function is only called after a certain amount of time has elapsed since the last invocation. If the debounced function is called again within the specified `wait` time, the previous timeout is cleared, and a new one is set, effectively resetting the debounce timer.
+
+Example of function call:-
+
+function logger(){
+  console.log("debounce");
+}
+const printlog = debounce (logger,2000);
+printlog();
+printlog();
+/* Output:-
+debounce 
+debounce
+*/
