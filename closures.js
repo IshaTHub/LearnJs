@@ -10,7 +10,7 @@ function x(){
 }
 
 var z = x();
-//console.log(z);
+console.log(z);
 //z();
 
 //this z will print function y(),
