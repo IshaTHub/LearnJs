@@ -11,7 +11,7 @@ function x(){
 
 var z = x();
 console.log(z);
-//z();
+z();
 
 //this z will print function y(),
 // here y will remeber the lexical environment of x() where a = 1
