@@ -9,11 +9,11 @@ function x(){
     return y;
 }
 
-//var z = x();
+var z = x();
 //console.log(z);
 //z();
 
-this z will print function y(),
+//this z will print function y(),
 // here y will remeber the lexical environment of x() where a = 1
 // so when we call z(), it will print 1
 
