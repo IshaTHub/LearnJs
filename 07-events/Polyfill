@@ -5,7 +5,7 @@ install it via a package manager, ensuring
 compatibility with older environments.
 
 
-Pollyfill for debounce
+//Pollyfill for debounce
 
 
 function debounce(func, wait) {
