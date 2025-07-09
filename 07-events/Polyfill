@@ -1,6 +1,6 @@
-A polyfill in JavaScript is a script that adds 
-modern features to older browsers that do not natively support them. 
-To use it, include the polyfill script in your HTML or 
+//A polyfill in JavaScript is a script that adds 
+//modern features to older browsers that do not natively support them. 
+//To use it, include the polyfill script in your HTML or 
 install it via a package manager, ensuring 
 compatibility with older environments.
 
