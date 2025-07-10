@@ -10,7 +10,7 @@ When a function is called
 A new Function Execution Context (FEC) is created and pushed onto the stack.
 When a function returns
 
-The FEC is popped off the stack.
+//The FEC is popped off the stack.
 When an error occurs (e.g., infinite recursion)
 
 //The stack overflows, leading to a stack overflow error.
