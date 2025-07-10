@@ -13,7 +13,7 @@ When a function returns
 The FEC is popped off the stack.
 When an error occurs (e.g., infinite recursion)
 
-The stack overflows, leading to a stack overflow error.
+//The stack overflows, leading to a stack overflow error.
 EXAMPLE:
 function first() {
     console.log("First Function");
