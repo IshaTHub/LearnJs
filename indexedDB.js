@@ -8,8 +8,6 @@
 
 let openRequest = indexedDB.open(name, version);
 
-
-
 let openRequest = indexedDB.open("store", 1);
 
 openRequest.onupgradeneeded = function() {
