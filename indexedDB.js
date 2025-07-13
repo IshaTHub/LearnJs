@@ -6,7 +6,7 @@
 // Can store much bigger volumes of data than localStorage.
 
 
-let openRequest = indexedDB.open(name, version);
+//let openRequest = indexedDB.open(name, version);
 
 let openRequest = indexedDB.open("store", 1);
 
