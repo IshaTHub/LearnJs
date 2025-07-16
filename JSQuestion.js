@@ -1,10 +1,10 @@
-Q: Create a JS function that moves all products above a given price from one category to another.
+// Q: Create a JS function that moves all products above a given price from one category to another.
  
-Function: function moveExpensiveProducts(categories, fromCategoryId, toCategoryId, priceThreshold) {}
+// Function: function moveExpensiveProducts(categories, fromCategoryId, toCategoryId, priceThreshold) {}
  
-Call the function: moveExpensiveProducts(categories, 3, 1, 50);
+// Call the function: moveExpensiveProducts(categories, 3, 1, 50);
  
-Initial Array: 
+// Initial Array: 
  
 const categories = [
   {
@@ -34,7 +34,7 @@ const categories = [
   }
 ];
  
-Expected Output: 
+//Expected Output: 
  
 [
   {
@@ -65,3 +65,25 @@ Expected Output:
     ]
   }
 ]
+
+
+function moveExpensiveProducts(categories, fromCategoryId, toCategoryId, priceThreshold) {
+  const fromCategory = categories.find(cat => cat.id === fromCategoryId);
+  const toCategory = categories.find(cat => cat.id === toCategoryId);
+
+  if (!fromCategory || !toCategory) {
+    console.error("Invalid category IDs");
+    return;
+  }
+
+  // Filter and extract expensive products
+  const expensiveProducts = fromCategory.products.filter(p => p.price > priceThreshold);
+
+  // Retain only products below or equal to the threshold
+  fromCategory.products = fromCategory.products.filter(p => p.price <= priceThreshold);
+
+  // Add the expensive products to the destination category
+  toCategory.products.push(...expensiveProducts);
+}
+
+
