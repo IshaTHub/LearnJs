@@ -34,7 +34,7 @@ const categories = [
   }
 ];
  
-// Expected Output: 
+//Expected Output: 
  
 [
   {
@@ -66,5 +66,24 @@ const categories = [
   }
 ]
 
+
+function moveExpensiveProducts(categories, fromCategoryId, toCategoryId, priceThreshold) {
+  const fromCategory = categories.find(cat => cat.id === fromCategoryId);
+  const toCategory = categories.find(cat => cat.id === toCategoryId);
+
+  if (!fromCategory || !toCategory) {
+    console.error("Invalid category IDs");
+    return;
+  }
+
+  // Filter and extract expensive products
+  const expensiveProducts = fromCategory.products.filter(p => p.price > priceThreshold);
+
+  // Retain only products below or equal to the threshold
+  fromCategory.products = fromCategory.products.filter(p => p.price <= priceThreshold);
+
+  // Add the expensive products to the destination category
+  toCategory.products.push(...expensiveProducts);
+}
 
 
