@@ -1,10 +1,10 @@
-Q: Create a JS function that moves all products above a given price from one category to another.
+// Q: Create a JS function that moves all products above a given price from one category to another.
  
-Function: function moveExpensiveProducts(categories, fromCategoryId, toCategoryId, priceThreshold) {}
+// Function: function moveExpensiveProducts(categories, fromCategoryId, toCategoryId, priceThreshold) {}
  
-Call the function: moveExpensiveProducts(categories, 3, 1, 50);
+// Call the function: moveExpensiveProducts(categories, 3, 1, 50);
  
-Initial Array: 
+// Initial Array: 
  
 const categories = [
   {
@@ -34,7 +34,7 @@ const categories = [
   }
 ];
  
-Expected Output: 
+// Expected Output: 
  
 [
   {
@@ -57,7 +57,7 @@ Expected Output:
     ]
   },
   {
-    id: 3,
+    id: 3, 
     name: "Accessories",
     products: [
       // only the item below threshold remains
@@ -65,3 +65,6 @@ Expected Output:
     ]
   }
 ]
+
+
+

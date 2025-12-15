@@ -13,8 +13,8 @@ var b = function(){
 //function statement is hoisted, function expression is not
 
 //Anonymous function
-function (){
-    console.log("Anonymous function");
+var abc = function (){
+    console.log("Anonymous function"); 
 }
 
 
